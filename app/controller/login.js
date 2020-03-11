@@ -32,8 +32,6 @@ class LoginController extends Controller {
     }
     // 验证码正确则继续登录操作
     const userData = await ctx.service.login.login({ username, password });
-    console.log(userData);
-    return;
     if (!userData) {
       resMsg.errcode = 2;
       resMsg.msg = '用户名或密码错误';
@@ -46,7 +44,6 @@ class LoginController extends Controller {
       uid: userData.user._id,
     };
     ctx.body = resMsg;
-
   }
 
 }

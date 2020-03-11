@@ -3,7 +3,7 @@
 module.exports = app => {
   app.beforeStart(async () => {
     // 应用会等待这个函数执行完成才启动
-    const db = app.mongooseDB.get('blog');
+    const db = app.mongooseDB.get('lkblog');
     const adminInfo = app.config.user;
     console.log(app.model);
     const admin = await app.model.User.find({ userName: adminInfo.userName });

@@ -33,8 +33,8 @@ module.exports = appInfo => {
   };
   const mongoose = {
     clients: {
-      blog: {
-        url: 'mongodb://127.0.0.1/blog',
+      lkblog: {
+        url: 'mongodb://127.0.0.1/lkblog',
         options: {
           // user: 'test', // 数据库账号
           // pass: 'test'  // 数据库密码

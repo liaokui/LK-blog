@@ -3,7 +3,7 @@
 module.exports = app => {
   const mongoose = app.mongoose;
   const Schema = mongoose.Schema;
-  const conn = app.mongooseDB.get('blog');
+  const conn = app.mongooseDB.get('lkblog');
 
   const UserSchema = new Schema({
     userName: { type: String },
