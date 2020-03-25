@@ -34,11 +34,14 @@ module.exports = appInfo => {
   const mongoose = {
     clients: {
       lkblog: {
-        url: 'mongodb://127.0.0.1/lkblog',
+        // url: 'mongodb://127.0.0.1/lkblog',
+        url: 'mongodb://150.109.105.237:27017/admin',
         options: {
           // user: 'test', // 数据库账号
           // pass: 'test'  // 数据库密码
+          useUnifiedTopology: true,
         },
+
       },
     },
   };
@@ -52,6 +55,12 @@ module.exports = appInfo => {
   const jwt = {
     cert: 'huanggegehaoshuai', // jwt秘钥
   };
+  const multipart = {
+    fileSize: '50mb',
+    mode: 'stream',
+    // will append to whilelist
+    fileExtensions: [ '.xls', '.txt' ],
+  };
 
   return {
     ...config,
@@ -60,5 +69,6 @@ module.exports = appInfo => {
     user,
     session,
     jwt,
+    multipart,
   };
 };

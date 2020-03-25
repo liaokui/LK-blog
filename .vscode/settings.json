@@ -1,0 +1,23 @@
+{
+  "workbench.iconTheme": "vscode-icons",
+  "files.autoSave": "afterDelay",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "editor.formatOnSave": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "eslint.format.enable": true,
+  "prettier.requirePragma": true,
+  "[vue]": {
+      "editor.defaultFormatter": "octref.vetur"
+  },
+  //分号
+  "prettier.semi": false,
+  //单引号包裹字符串
+  "prettier.singleQuote": true,
+  //html格式化依赖  默认为none
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  //函数前加空格
+  // "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  //没有下边这个 上边不生效
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+}

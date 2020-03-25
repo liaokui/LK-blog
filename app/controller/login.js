@@ -18,14 +18,13 @@ class LoginController extends Controller {
     const { ctx } = this;
     const { username, password, code } = ctx.request.body;
     const resMsg = {
-      errcode: 0,
+      code: 200,
       data: {},
       msg: '登录成功',
     };
     const isCaptchaVali = ctx.service.login.checkCaptcha(code);
-    console.log(isCaptchaVali);
     if (!isCaptchaVali) {
-      resMsg.errcode = 1;
+      resMsg.code = 400;
       resMsg.msg = '验证码错误';
       ctx.body = resMsg;
       return;
@@ -33,7 +32,7 @@ class LoginController extends Controller {
     // 验证码正确则继续登录操作
     const userData = await ctx.service.login.login({ username, password });
     if (!userData) {
-      resMsg.errcode = 2;
+      resMsg.code = 400;
       resMsg.msg = '用户名或密码错误';
       ctx.body = resMsg;
       return;

@@ -7,8 +7,9 @@ const svgCaptcha = require('svg-captcha');
 class LoginService extends Service {
   async getCaptcha() {
     return svgCaptcha.create({
-      width: 85,
+      width: 80,
       height: 38,
+      background: '#D6E8ED',
     });
   }
   checkCaptcha(code) {
@@ -25,7 +26,6 @@ class LoginService extends Service {
   // 登录操作
   async login({ username, password }) {
     const { ctx, app } = this;
-    console.log(ctx.model);
     const userData = await ctx.model.User.find({
       userName: username,
       password,
