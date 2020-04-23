@@ -34,20 +34,19 @@ module.exports = appInfo => {
   const mongoose = {
     clients: {
       lkblog: {
-        // url: 'mongodb://127.0.0.1/lkblog',
-        url: 'mongodb://150.109.105.237:27017/lkblog',
+        url: 'mongodb://127.0.0.1:27017/lkblog',
+        // url: 'mongodb://150.109.105.237:27017/lkblog',
         options: {
-          user: 'lkblogAdmin', // 数据库账号
-          pass: '362502', // 数据库密码
+        //   user: 'lkblogAdmin', // 数据库账号
+        //   pass: '362502', // 数据库密码
           useUnifiedTopology: true,
         },
-
       },
     },
   };
   const user = { // 初始化后台管理管理员的账号
     userName: 'admin',
-    password: '123456',
+    password: 'admin',
   };
   const session = {
     maxAge: 3600 * 1000,

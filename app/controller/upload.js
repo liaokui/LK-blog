@@ -16,12 +16,7 @@ const md5 = require('md5');
 class UploadController extends Controller {
   async index() {
     const ctx = this.ctx;
-    // ctx.set('Content-Type', 'multipart/form-data');
-    console.log(ctx.request.body);
     const stream = await ctx.getFileStream();
-    console.log('-----------------');
-    console.log(stream);
-    console.log('-----------------');
     // 新建一个文件名
     const filename = md5(stream.filename) + path
       .extname(stream.filename)
@@ -41,7 +36,9 @@ class UploadController extends Controller {
     }
     // 文件响应
     ctx.body = {
+      status: 'success',
       url: '/public/uploads/' + filename,
+      msg: '上传成功',
     };
   }
 }
