@@ -14,7 +14,6 @@ class TagService extends Service {
   async checkDuplicate(tagName) {
     const { ctx } = this;
     const res = await ctx.model.Tag.find({ tagName });
-    console.log(res);
     return res.length === 0;
   }
 

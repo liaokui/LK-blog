@@ -34,11 +34,11 @@ module.exports = appInfo => {
   const mongoose = {
     clients: {
       lkblog: {
-        // url: 'mongodb://127.0.0.1:27017/lkblog',
-        url: 'mongodb://150.109.105.237:27017/lkblog',
+        url: 'mongodb://127.0.0.1:27017/lkblog',
+        // url: 'mongodb://150.109.105.237:27017/lkblog',
         options: {
-          user: 'lkblogAdmin', // 数据库账号
-          pass: '362502', // 数据库密码
+          // user: 'lkblogAdmin', // 数据库账号
+          // pass: '362502', // 数据库密码
           useUnifiedTopology: true,
         },
       },
@@ -58,7 +58,7 @@ module.exports = appInfo => {
     fileSize: '50mb',
     mode: 'stream',
     // will append to whilelist
-    fileExtensions: [ '.xls', '.txt' ],
+    fileExtensions: [ '.xls', '.txt', '.epub' ],
   };
 
   return {

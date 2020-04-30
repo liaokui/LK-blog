@@ -50,7 +50,9 @@ class StatisticsService extends Service {
     dataList.sort((a, b) => {
       return (a[1] + a[2]) < (b[1] + b[2]);
     });
-    dataList.length = 6;
+    if (dataList.length >= 6) {
+      dataList.length = 6;
+    }
     list = list.concat(dataList);
     return list;
   }
