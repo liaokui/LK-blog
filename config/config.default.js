@@ -34,11 +34,11 @@ module.exports = appInfo => {
   const mongoose = {
     clients: {
       lkblog: {
-        url: 'mongodb://127.0.0.1:27017/lkblog',
-        // url: 'mongodb://150.109.105.237:27017/lkblog',
+        // url: 'mongodb://127.0.0.1:27017/lkblog',
+        url: 'mongodb://150.109.105.237:27017/lkblog',
         options: {
-          // user: 'lkblogAdmin', // 数据库账号
-          // pass: '362502', // 数据库密码
+          user: 'lkblogUser', // 数据库账号
+          pass: '123456', // 数据库密码
           useUnifiedTopology: true,
         },
       },
