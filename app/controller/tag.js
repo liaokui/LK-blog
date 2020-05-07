@@ -11,8 +11,7 @@ class TagController extends Controller {
       data: {},
       msg: '获取列表成功',
     };
-    const decode = jwt.verify(ctx.get('Authorization'), ctx.app.config.jwt.cert);
-    const list = await ctx.service.tag.getList(decode ? decode.id : null);
+    const list = await ctx.service.tag.getList();
     resMsg.data = list;
     ctx.body = resMsg;
   }

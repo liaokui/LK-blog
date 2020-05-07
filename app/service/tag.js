@@ -7,7 +7,6 @@ class TagService extends Service {
   // 添加
   async create(tagName) {
     const { ctx } = this;
-    console.log(tagName);
     return await ctx.model.Tag.create({ tagName, userId: ctx.userId });
   }
   // 检查重复
@@ -18,13 +17,9 @@ class TagService extends Service {
   }
 
   // 获取列表
-  async getList(id) {
-    const params = {};
-    if (id) {
-      params.userId = id;
-    }
+  async getList() {
     const { ctx } = this;
-    const res = await ctx.model.Tag.find(params);
+    const res = await ctx.model.Tag.find({ userId: ctx.userId });
     return res;
   }
 

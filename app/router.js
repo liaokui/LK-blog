@@ -26,7 +26,7 @@ module.exports = app => {
   router.post('/api/upload', auth, controller.upload.index);
 
   // 标签
-  router.get('/api/tag/find', controller.tag.find);
+  router.get('/api/tag/find', auth, controller.tag.find);
   router.post('/api/tag/create', auth, controller.tag.create);
   router.post('/api/tag/remove', auth, controller.tag.remove);
 
