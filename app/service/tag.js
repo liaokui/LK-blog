@@ -19,6 +19,7 @@ class TagService extends Service {
   // 获取列表
   async getList() {
     const { ctx } = this;
+    console.log(ctx.userId);
     const res = await ctx.model.Tag.find({ userId: ctx.userId });
     return res;
   }

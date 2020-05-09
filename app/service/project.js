@@ -20,7 +20,12 @@ class ProjectService extends Service {
   // 获取详情
   async getDetail(id) {
     const { ctx } = this;
-    return await ctx.model.Project.find({ _id: id }).populate([ 'tagId' ]);
+    const params = {};
+    params._id = id;
+    if (ctx.query.status) {
+      params.status = ctx.query.status;
+    }
+    return await ctx.model.Project.find(params).populate([ 'tagId' ]);
   }
 
   // 创建

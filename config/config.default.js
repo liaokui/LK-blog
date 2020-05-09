@@ -18,6 +18,7 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+
   config.security = {
     csrf: {
       enable: false,
@@ -46,7 +47,7 @@ module.exports = appInfo => {
   };
   const user = { // 初始化后台管理管理员的账号
     userName: 'admin',
-    password: 'admin',
+    password: '123456',
   };
   const session = {
     maxAge: 3600 * 1000,
